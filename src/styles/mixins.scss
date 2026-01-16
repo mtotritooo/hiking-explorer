@@ -1,0 +1,153 @@
+@import "./variables.scss";
+
+
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin gridAuto($minSize: 250px) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($minSize, 1fr));
+  gap: $space-lg;
+}
+
+@mixin card {
+  background: var(--card-bg);
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-md;
+  transition: all $transition-normal;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+@mixin button-base {
+  border-radius: $radius-sm;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all $transition-fast;
+}
+
+@mixin button-icon {
+  @include flexCenter;
+  background: rgba($white, 0.2);
+  border: 2px solid $white;
+  color: $white;
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-full;
+
+  &:hover {
+    background: rgba($white, 0.3);
+    transform: scale(1.05);
+  }
+}
+
+@mixin link {
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: all $transition-fast;
+  cursor: pointer;
+}
+
+@mixin text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin gradient-primary {
+  background: linear-gradient(135deg, $primary-gradient-start 0%, $primary-gradient-end 100%);
+}
+
+@mixin blur-backdrop {
+  backdrop-filter: blur(2px);
+}
+
+
+@mixin fadeIn($duration: $transition-normal) {
+  animation: fadeIn $duration ease;
+}
+
+@mixin slideUp($duration: $transition-slow) {
+  animation: slideUp $duration ease;
+}
+
+@mixin scaleIn($duration: $transition-normal) {
+  animation: scaleIn $duration ease;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

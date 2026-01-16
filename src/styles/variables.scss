@@ -1,0 +1,75 @@
+$primary-gradient-start: #667eea;
+$primary-gradient-end: #764ba2;
+$primary-light: #667eea;
+$primary-dark: #764ba2;
+
+
+$light-bg: #ffffff;
+$light-text: #111111;
+$light-card-bg: #f5f5f5;
+
+
+$dark-bg: #121212;
+$dark-text: #f5f5f5;
+$dark-card-bg: #1e1e1e;
+
+
+$white: #ffffff;
+$black: #000000;
+$gray-light: #f5f5f5;
+$gray-medium: #888;
+$gray-dark: #1a1a1a;
+$border-light: rgba(102, 126, 234, 0.2);
+
+
+$font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.9rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.2rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 1.8rem;
+$font-size-3xl: 2em;
+$font-size-4xl: 3.2em;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.1;
+$line-height-normal: 1.5;
+
+
+
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-2xl: 3rem;
+
+
+$radius-sm: 6px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-full: 50%;
+
+
+$shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.15);
+$shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.4s ease;
+
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+
+$z-modal: 1000;
+$z-navbar: 100;

@@ -1,0 +1,36 @@
+@import "./variables.scss";
+
+body[data-theme="light"] {
+  --bg-color: #{$light-bg};
+  --text-color: #{$light-text};
+  --card-bg: #{$light-card-bg};
+}
+
+body[data-theme="dark"] {
+  --bg-color: #{$dark-bg};
+  --text-color: #{$dark-text};
+  --card-bg: #{$dark-card-bg};
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  transition: all $transition-normal;
+}
+
+.hero,
+.articles,
+nav {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: $space-lg;
+  margin: $space-md 0;
+  border-radius: $radius-lg;
+}

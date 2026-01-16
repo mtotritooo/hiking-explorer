@@ -1,0 +1,103 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-md $space-xl;
+  @include gradient-primary;
+  box-shadow: $shadow-md;
+  margin-bottom: $space-xl;
+  border-radius: $radius-lg;
+
+  @include tablet {
+    flex-wrap: wrap;
+    gap: $space-md;
+    padding: $space-md;
+  }
+}
+
+.navbar-brand {
+  h1 {
+    margin: 0;
+    font-size: $font-size-xl;
+    color: $white;
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+
+    @include tablet {
+      font-size: $font-size-lg;
+      flex-basis: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.navbar-links {
+  display: flex;
+  gap: $space-xl;
+  flex: 1;
+  justify-content: center;
+
+  @include tablet {
+    gap: $space-md;
+    flex-basis: 100%;
+    justify-content: space-around;
+  }
+}
+
+.nav-link {
+  color: $white;
+  text-decoration: none;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  padding: $space-sm $space-md;
+  border-radius: $radius-sm;
+  transition: all $transition-normal;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgba($white, 0.8);
+    transition: width $transition-normal;
+  }
+
+  &:hover {
+    background-color: rgba($white, 0.1);
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &.active {
+    background-color: rgba($white, 0.25);
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  @include tablet {
+    font-size: $font-size-sm;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+.theme-toggle {
+  @include button-icon;
+  font-size: $font-size-xl;
+
+  &:hover {
+    background: rgba($white, 0.3);
+    transform: scale(1.05);
+  }
+}

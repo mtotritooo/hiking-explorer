@@ -1,0 +1,93 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba($black, 0.6);
+  @include flexCenter;
+  z-index: $z-modal;
+  @include fadeIn;
+  @include blur-backdrop;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  border-radius: $radius-lg;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: $shadow-xl;
+  @include slideUp;
+
+  @include mobile {
+    width: 95%;
+    max-height: 90vh;
+  }
+}
+
+.modal-header {
+  @include flexBetween;
+  padding: $space-lg;
+  border-bottom: 2px solid $border-light;
+  @include gradient-primary;
+  color: $white;
+  border-radius: $radius-lg $radius-lg 0 0;
+
+  h2 {
+    margin: 0;
+    font-size: $font-size-xl;
+
+    @include mobile {
+      font-size: $font-size-lg;
+    }
+  }
+
+  @include mobile {
+    padding: $space-md;
+  }
+}
+
+.modal-close {
+  @include button-icon;
+  font-size: $font-size-xl;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: rgba($white, 0.3);
+    transform: rotate(90deg);
+  }
+}
+
+.modal-body {
+  padding: $space-lg;
+  color: var(--text-color);
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: $radius-md;
+    margin-bottom: $space-lg;
+  }
+
+  p {
+    margin-bottom: $space-md;
+
+    strong {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  @include mobile {
+    padding: $space-md;
+
+    img {
+      height: auto;
+    }
+  }
+}
